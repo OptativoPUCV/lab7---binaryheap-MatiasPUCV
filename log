@@ -38,3 +38,17 @@ Wed 27 Sep 2023 10:04:35 PM UTC:
  tests:  2|2
 total_score: 20/70
 eac0137
+Wed 27 Sep 2023 10:43:55 PM UTC: 
+ heap.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:36:20: error: incompatible types when initializing type ‘heapElem *’ {aka ‘struct nodo *’} using type ‘heapElem’ {aka ‘struct nodo’}
+   36 |   heapElem* temp = pq->heapArray[pq->size - 1];
+      |                    ^~
+heap.c:36:13: error: unused variable ‘temp’ [-Werror=unused-variable]
+   36 |   heapElem* temp = pq->heapArray[pq->size - 1];
+      |             ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+5903567
