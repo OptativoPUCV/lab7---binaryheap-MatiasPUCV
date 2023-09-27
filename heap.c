@@ -35,7 +35,7 @@ void heap_push(Heap *pq, void *data, int priority)
   if (pq->capac == pq->size)
     return;
 
-  pq->capac++;
+  pq->size++;
 
   heapElem new;
   new.data = data;
