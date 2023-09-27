@@ -1,38 +1,33 @@
+#include "heap.h"
+#include <ctype.h>
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <math.h>
-#include <ctype.h>
-#include "heap.h"
 
-typedef struct nodo{
-   void* data;
-   int priority;
-}heapElem;
+typedef struct nodo {
+  void *data;
+  int priority;
+} heapElem;
 
-typedef struct Heap{
-  heapElem* heapArray;
+typedef struct Heap {
+  heapElem *heapArray;
   int size;
   int capac;
 } Heap;
 
+void *heap_top(Heap *pq) { return NULL; }
 
-void* heap_top(Heap* pq){
-    return NULL;
-}
+void heap_push(Heap *pq, void *data, int priority) {}
 
+void heap_pop(Heap *pq) {}
 
+Heap *createHeap() {
 
-void heap_push(Heap* pq, void* data, int priority){
+  Heap *temp = malloc(sizeof(Heap));
+  temp->size = 0;
+  temp->capac = 3;
+  temp->heapArray = malloc(sizeof(heapElem) * 3);
 
-}
-
-
-void heap_pop(Heap* pq){
-
-}
-
-Heap* createHeap(){
-
-   return NULL;
+  return NULL;
 }
