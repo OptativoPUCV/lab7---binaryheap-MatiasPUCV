@@ -35,13 +35,13 @@ void heap_push(Heap *pq, void *data, int priority)
   if (pq->capac == pq->size)
     return;
 
-  pq->size++;
-
   heapElem new;
   new.data = data;
   new.priority = priority;
 
   pq->heapArray[pq->size] = new;
+  pq->size++;
+  
   //int index = pq->size;
 
   
