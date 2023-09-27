@@ -26,3 +26,9 @@ heap.c:20:3: error: cannot convert to a pointer type
       |   ^~~~~~
 Compilation failed
 fa1c95f
+Wed 27 Sep 2023 10:03:01 PM UTC: 
+ heap.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+ tests:  1|3
+total_score: 10/70
+38c9879
