@@ -81,3 +81,14 @@ Wed 27 Sep 2023 10:46:47 PM UTC:
  tests:  2|2
 total_score: 20/70
 07f33c2
+Wed 27 Sep 2023 11:19:30 PM UTC: 
+ heap.c | 31 ++++++++++++++++++++++++++++++-
+ 1 file changed, 30 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:45:7: error: unused variable ‘index’ [-Werror=unused-variable]
+   45 |   int index = pq->size;
+      |       ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+02276e5

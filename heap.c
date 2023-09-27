@@ -27,7 +27,25 @@ void *heap_top(Heap *pq) {
   return pq->heapArray[0].data;
 }
 
-void heap_push(Heap *pq, void *data, int priority) {}
+void heap_push(Heap *pq, void *data, int priority)
+{
+  if (pq == NULL)
+    return;
+  
+  if (pq->capac == pq->size)
+    return;
+
+  pq->capac++;
+
+  heapElem new;
+  new.data = data;
+  new.priority = priority;
+
+  pq->heapArray[pq->size] = new;
+  int index = pq->size;
+
+  
+}
 
 void heap_pop(Heap *pq) {
   if (pq == NULL)
@@ -40,6 +58,17 @@ void heap_pop(Heap *pq) {
 
   pq->heapArray[0] = temp;
   printf("%i\n", pq->heapArray[0].priority);
+
+  int index = 0;
+
+  if (pq->heapArray[index].priority < pq->heapArray[2*index].priority)
+  {
+    
+  }
+  else
+  {
+    
+  }
 }
 
 Heap *createHeap() {
