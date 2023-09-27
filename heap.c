@@ -33,7 +33,9 @@ void heap_push(Heap *pq, void *data, int priority)
     return;
   
   if (pq->capac == pq->size)
-    return;
+  {
+    printf("Test\n"); 
+  }
 
   heapElem new;
   new.data = data;
@@ -53,7 +55,7 @@ void heap_push(Heap *pq, void *data, int priority)
     index = (index - 1) / 2;
   }
 
-
+  
     
   index = (index-1)/2;
   
