@@ -34,6 +34,9 @@ void heap_pop(Heap *pq) {
     return;
 
   heapElem temp = pq->heapArray[pq->size - 1];
+  pq->size--;
+
+  pq->heapArray[0] = temp;
 }
 
 Heap *createHeap() {
