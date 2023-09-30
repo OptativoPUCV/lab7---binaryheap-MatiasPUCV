@@ -55,13 +55,6 @@ void heap_push(Heap *pq, void *data, int priority)
 
     index = (index - 1) / 2;
   }
-
-  
-    
-  index = (index-1)/2;
-  
-
-  
 }
 
 void heap_pop(Heap *pq) {
