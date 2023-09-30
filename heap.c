@@ -35,7 +35,7 @@ void heap_push(Heap *pq, void *data, int priority)
   if (pq->capac == pq->size)
   {
     pq->capac = pq->capac*2 + 1;
-    pq->heapArray = realloc(pq->heapArray, pq->capac);
+    pq->heapArray = realloc(pq->heapArray, pq->capac * sizeof(heapElem));
   }
 
   heapElem new;
@@ -86,7 +86,7 @@ Heap *createHeap() {
   Heap *temp = malloc(sizeof(Heap));
   temp->size = 0;
   temp->capac = 3;
-  temp->heapArray = malloc(sizeof(heapElem) * 3);
+  temp->heapArray = malloc(sizeof(heapElem) * temp->capac);
 
   return temp;
 }
