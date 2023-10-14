@@ -81,6 +81,17 @@ void heap_pop(Heap *pq) {
         continue;
       }
 
+      child = 2*index + 2;
+      if(pq->heapArray[index].priority < pq->heapArray[child].priority)
+      {
+        heapElem temp = pq->heapArray[index];
+        pq->heapArray[index] = pq->heapArray[child];
+        pq->heapArray[child] = temp;
+
+        index = child;
+        continue;
+      }
+
       flag = 1;
   }
 
