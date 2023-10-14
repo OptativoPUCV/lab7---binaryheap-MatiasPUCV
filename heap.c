@@ -61,20 +61,21 @@ void heap_pop(Heap *pq) {
   if (pq == NULL)
     return;
 
-  for (int i = 0; i < pq->size; i++)
-  {
-    printf("%i ", pq->heapArray[i].priority);
-  }
-  printf("\n");
-
   pq->heapArray[0] = pq->heapArray[pq->size - 1];
   pq->size--;
 
-  for (int i = 0; i < pq->size; i++)
+  int index = 0;
+
+  if(pq->heapArray[index].priority > pq->heapArray[2*index + 1].priority)
   {
-    printf("%i ", pq->heapArray[i].priority);
+    heapElem temp = pq->heapArray[index];
+    pq->heapArray[index] = pq->heapArray[2*index + 1];
+    pq->heapArray[2*index + 1] = temp;
+
+    index = [2*index + 1]
   }
-  printf("\n");
+
+
 
 }
 
