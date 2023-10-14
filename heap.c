@@ -99,6 +99,7 @@ void heap_pop(Heap *pq) {
 
 
   heap_pop_helper(pq, 1, 0);
+  heap_pop_helper(pq, 2, 0);
 
 
 }
