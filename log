@@ -293,3 +293,13 @@ heap.c:75:26: error: expected ‘;’ before ‘}’ token
       |   ~                       
 Compilation failed
 4d80650
+Sat 14 Oct 2023 07:28:04 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:75:13: error: expected expression before ‘[’ token
+   75 |     index = [2*index + 1];
+      |             ^
+Compilation failed
+4e1e7db
