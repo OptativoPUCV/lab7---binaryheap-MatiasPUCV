@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 typedef struct nodo {
   void *data;
@@ -57,6 +58,29 @@ void heap_push(Heap *pq, void *data, int priority)
   }
 }
 
+void heap_pop_helper(Heap *pq, int offset)
+{
+  int index = 0;
+  bool end = false;
+
+  while (!end)
+  {
+    int child = 2*index + offset;
+    if(pq->heapArray[index].priority < pq->heapArray[child].priority)
+    {
+      heapElem temp = pq->heapArray[index];
+      pq->heapArray[index] = pq->heapArray[child];
+      pq->heapArray[child] = temp;
+
+      index = child;
+
+      continue;
+    }
+
+    end = true;
+  }
+}
+
 void heap_pop(Heap *pq) {
   if (pq == NULL)
     return;
@@ -66,31 +90,22 @@ void heap_pop(Heap *pq) {
 
   int index = 0;
 
-  int flag = 0;
+  bool flag = true;
 
-  while (flag == 0)
+  while (flag)
   {
       int child = 2*index + 1;
       if(pq->heapArray[index].priority < pq->heapArray[child].priority)
       {
-        heapElem temp = pq->heapArray[index];
-        pq->heapArray[index] = pq->heapArray[child];
-        pq->heapArray[child] = temp;
-
+        heap_pop_helper(pq, 1);
         continue;
       }
-    
-      child = 2*index + 2;
+      child++;
       if(pq->heapArray[index].priority < pq->heapArray[child].priority)
       {
-        heapElem temp = pq->heapArray[index];
-        pq->heapArray[index] = pq->heapArray[child];
-        pq->heapArray[child] = temp;
-
+        heap_pop_helper(pq, 2);
         continue;
       }
-
-      flag = 1;
   }
 
 }
