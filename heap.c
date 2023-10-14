@@ -92,7 +92,6 @@ void heap_pop(Heap *pq) {
   printf("\n");
 
   pq->heapArray[0] = pq->heapArray[pq->size - 1];
-  pq->size--;
 
   int index = 0;
 
@@ -116,6 +115,7 @@ void heap_pop(Heap *pq) {
       flag = false;
   }
 
+  pq->size--;
 }
 
 Heap *createHeap() {
