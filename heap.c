@@ -58,27 +58,24 @@ void heap_push(Heap *pq, void *data, int priority)
   }
 }
 
-void heap_pop_helper(Heap *pq, int offset)
+void heap_pop_helper(Heap *pq, int offset, int index)
 {
-  int index = 0;
-  bool end = false;
+  int child = 2*index + offset;
 
-  while (!end)
+  if (child > pq->size)
+    return;
+
+  if(pq->heapArray[index].priority < pq->heapArray[child].priority)
   {
-    int child = 2*index + offset;
-    if(pq->heapArray[index].priority < pq->heapArray[child].priority)
-    {
-      heapElem temp = pq->heapArray[index];
-      pq->heapArray[index] = pq->heapArray[child];
-      pq->heapArray[child] = temp;
+    heapElem temp = pq->heapArray[index];
+    pq->heapArray[index] = pq->heapArray[child];
+    pq->heapArray[child] = temp;
 
-      index = child;
+    heap_pop_helper(pq, offset, child);
 
-      continue;
-    }
-
-    end = true;
   }
+
+
 }
 
 void heap_pop(Heap *pq) {
@@ -92,6 +89,7 @@ void heap_pop(Heap *pq) {
   printf("\n");
 
   pq->heapArray[0] = pq->heapArray[pq->size - 1];
+  pq->size--;
 
   for (int i = 0; i < pq->size; i++)
   {
@@ -99,29 +97,10 @@ void heap_pop(Heap *pq) {
   }
   printf("\n");
 
-  int index = 0;
 
-  bool flag = true;
+  heap_pop_helper(pq, 1, 0);
 
-  while (flag)
-  { 
-      int child = 2*index + 1;
-      if(pq->heapArray[index].priority < pq->heapArray[child].priority)
-      {
-        heap_pop_helper(pq, 1);
-        continue;
-      }
-      child++;
-      if(pq->heapArray[index].priority < pq->heapArray[child].priority)
-      {
-        heap_pop_helper(pq, 2);
-        continue;
-      }
 
-      flag = false;
-  }
-
-  pq->size--;
 }
 
 Heap *createHeap() {
