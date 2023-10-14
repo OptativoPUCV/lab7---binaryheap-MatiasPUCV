@@ -64,21 +64,11 @@ void heap_pop(Heap *pq) {
   heapElem temp = pq->heapArray[pq->size - 1];
   pq->size--;
 
-  printf("%i\n", pq->heapArray[0].priority);
+  //printf("%i\n", pq->heapArray[0].priority);
 
-  pq->heapArray[0] = temp;
-  printf("%i\n", pq->heapArray[0].priority);
+  //pq->heapArray[0] = temp;
+  //printf("%i\n", pq->heapArray[0].priority);
 
-  int index = 0;
-
-  if (pq->heapArray[index].priority < pq->heapArray[2*index].priority)
-  {
-    
-  }
-  else
-  {
-    
-  }
 }
 
 Heap *createHeap() {
