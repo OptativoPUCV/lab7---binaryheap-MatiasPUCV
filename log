@@ -349,3 +349,9 @@ Sat 14 Oct 2023 07:30:46 PM UTC:
  tests:  7|1
 total_score: 45/70
 b14f6a3
+Sat 14 Oct 2023 07:32:37 PM UTC: 
+ heap.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+ tests:  7|1
+total_score: 45/70
+3356281
