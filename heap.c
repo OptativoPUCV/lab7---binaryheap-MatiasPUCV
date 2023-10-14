@@ -68,6 +68,7 @@ void heap_pop(Heap *pq) {
   printf("\n");
 
   pq->heapArray[0] = pq->heapArray[pq->size - 1];
+  pq->size--;
 
   for (int i = 0; i < pq->size; i++)
   {
