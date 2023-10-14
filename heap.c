@@ -61,12 +61,12 @@ void heap_pop(Heap *pq) {
   if (pq == NULL)
     return;
 
-  //heapElem temp = pq->heapArray[pq->size - 1];
+  heapElem temp = pq->heapArray[pq->size - 1];
   pq->size--;
 
   //printf("%i\n", pq->heapArray[0].priority);
 
-  //pq->heapArray[0] = temp;
+  pq->heapArray[0] = temp;
   //printf("%i\n", pq->heapArray[0].priority);
 
 }
