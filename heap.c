@@ -106,6 +106,8 @@ void heap_pop(Heap *pq) {
         heap_pop_helper(pq, 2);
         continue;
       }
+
+      flag = false;
   }
 
 }
