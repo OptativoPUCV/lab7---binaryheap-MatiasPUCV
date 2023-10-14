@@ -82,6 +82,7 @@ void heap_pop(Heap *pq) {
       }
 
       child = 2*index + 2;
+      printf("[%i]\n",  pq->heapArray[child].priority);
       if(pq->heapArray[index].priority < pq->heapArray[child].priority)
       {
         printf("SI\n");
