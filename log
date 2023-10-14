@@ -313,3 +313,15 @@ heap.c:75:13: error: incompatible types when assigning to type ‘int’ from ty
       |             ^~
 Compilation failed
 24174e1
+Sat 14 Oct 2023 07:28:34 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:75:24: error: expected ‘;’ before ‘]’ token
+   75 |     index = 2*index + 1;
+      |                        ^
+      |                        ;
+heap.c:75:24: error: expected statement before ‘]’ token
+Compilation failed
+aa5e051
